@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/outils.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="brand">
+                <div class="logo">SM</div>
+                <div>
+                    <h1>Student Manager</h1>
+                    <p class="subtitle">Manage your class roster with ease</p>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-value">3</span>
+                    <span class="stat-label">Students</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid">
+            <!-- Add form -->
+            <section class="card form-card">
+                <div class="card-header">
+                    <h2>Add a Student</h2>
+                    <p>Fill in the details below to register a new student.</p>
+                </div>
+
+                <div class="student-form" autocomplete="off">
+                    <div class="field">
+                        <label for="cne">CNE</label>
+                        <input type="text" id="cne" name="cne" placeholder="e.g. C123456789" required>
+                        <span style="color:red" id="message-cne"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="field">
+                            <label for="firstname">First name</label>
+                            <input type="text" id="firstname" name="firstname" placeholder="John" required>
+                             <span style="color:red" id="message-firstname"></span>
+                        </div>
+                        <div class="field">
+                            <label for="lastname">Last name</label>
+                            <input type="text" id="lastname" name="lastname" placeholder="Doe" required>
+                            <span style="color:red" id="message-lastname"></span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="dob">Date of birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                        <span style="color:red" id="message-dob"></span>
+                    </div>
+
+                    <div class="actions">
+                        <button id="reset-btn" class="btn btn-ghost">Reset</button>
+                        <button id="add-btn" class="btn btn-primary" disabled>+ Add student</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Students table -->
+            <section class="card table-card">
+                <div class="card-header">
+                    <div>
+                        <h2>Students</h2>
+                        <p>All registered students.</p>
+                    </div>
+                    <div class="search">
+                        <input id="student-search" type="search" placeholder="Search..." aria-label="Search students">
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table class="students-table">
+                        <thead>
+                            <tr>
+                                <th>CNE</th>
+                                <th>First name</th>
+                                <th>Last name</th>
+                                <th>Date of birth</th>
+                                <th class="th-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <!-- <tr>
+                                <td><span class="badge">C123456789</span></td>
+                                <td>Sophia</td>
+                                <td>Bennett</td>
+                                <td>2002-05-14</td>
+                                <td class="td-actions">
+                                    <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                </td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <span>&copy; 2026 Student Manager</span>
+        </footer>
+        
+    </div>
+</body>
+</html>
