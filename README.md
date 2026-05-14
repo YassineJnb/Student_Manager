@@ -1,4 +1,4 @@
-Project Description
+#Project Description
 Student Manager is a simple and modern web app for managing a class roster. It lets you add students through a validated form, view them in a clean table, search instantly by any student field, and remove records when needed.
 All data is saved in LocalStorage, so your student list remains available after page refresh or browser restart without needing a backend.
 
