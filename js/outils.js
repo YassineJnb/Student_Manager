@@ -1,20 +1,24 @@
 const tbody = document.getElementById("tbody")
 const studentCountEl = document.querySelector(".stat-value")
 
+// Displays the provided student count in the statistics area.
 const renderStudentCount = (count) => {
     if (!studentCountEl) return
     studentCountEl.textContent = String(count)
 }
 
+// Recomputes the visible row count from the table.
 const updateStudentCount = () => {
     if (!tbody) return
     renderStudentCount(tbody.querySelectorAll("tr:not([hidden])").length)
 }
 
+// Writes the student list to local storage.
 const syncStudentsToStorage = (students) => {
     localStorage.setItem("students", JSON.stringify(students))
 }
 
+// Loads the stored student list from local storage.
 const getStoredStudents = () => {
     try {
         return JSON.parse(localStorage.getItem("students") || "[]")
@@ -24,6 +28,7 @@ const getStoredStudents = () => {
     }
 }
 
+// Creates and inserts a table row for one student.
 const addStudentToTable = (student) => {
     const tr = document.createElement("tr")
     tr.dataset.cne = student.cne
@@ -55,6 +60,7 @@ const addStudentToTable = (student) => {
     tbody.append(tr)
 }
 
+// Enables or disables the add button based on form validity.
 const checkFormValidity = () => {
     if (document.querySelector(".student-form").getElementsByClassName("valid").length === 4) {
         addBtn.removeAttribute("disabled")
