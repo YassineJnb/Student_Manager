@@ -172,3 +172,13 @@ students.forEach((student) => {
 })
 
 filterStudents()
+
+
+const escapehtml = (text) => {
+    text = text.replace(/&/g, "&amp;")
+    text = text.replace(/</g, "&lt;")
+    text = text.replace(/>/g, "&gt;")
+    text = text.replace(/"/g, "&quot;")
+    text = text.replace(/'/g, "&#039;")
+    return text
+}
